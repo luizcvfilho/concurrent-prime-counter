@@ -9,6 +9,9 @@ long long int next_num = 1;
 long long int prime_count = 0;
 pthread_mutex_t mutex;
 
+// Uncomment if you want to when threads end
+// #define PRINT_THREAD_END
+
 int ehPrimo(long long int n) {
     int i;
     if (n <= 1) return 0;
@@ -37,7 +40,10 @@ void *check_next(void *tid) {
         }
     }
 
+    #ifdef PRINT_THREAD_END
     printf("Thread %ld encerrada\n", id);
+    #endif
+
     pthread_exit(NULL);
 }
 
@@ -46,7 +52,7 @@ int main(int argc, char *argv[]) {
     double end;
     int T;
     long int i;
-    if (argc != 3) {
+    if (argc < 3) {
         fprintf(stderr, "Digite: %s <valor de N> <numero de threads> \n", argv[0]);
         return 1;
     }
