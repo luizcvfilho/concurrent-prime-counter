@@ -32,7 +32,7 @@ T = número de threads a serem usadas
 ./concurrent-prime N T
 ```
 
-### Executar `produto-interno-concorrente.c`
+### Executar `sequential-prime.c`
 
 N = número limite para verificações de primos
 
