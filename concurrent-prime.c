@@ -24,7 +24,6 @@ int ehPrimo(long long int n) {
 
 
 void *check_next(void *tid) {
-    long int id = (long int) tid;
     long long int i;
     while (1) {
         pthread_mutex_lock(&mutex);
@@ -41,6 +40,7 @@ void *check_next(void *tid) {
     }
 
     #ifdef PRINT_THREAD_END
+    long int id = (long int) tid;
     printf("Thread %ld encerrada\n", id);
     #endif
 
