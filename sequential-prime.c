@@ -36,7 +36,7 @@ int main(int argc, char *argv[]) {
 
     end = clock();
 
-    printf("N = %lld", N);
+    printf("N = %lld \n", N);
     printf("Quantidade de primos encontrados = %lld\n", prime_count);
     printf("Tempo: %.10f s\n", (end - start) / CLOCKS_PER_SEC);
 
