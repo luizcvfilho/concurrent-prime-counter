@@ -42,7 +42,7 @@ N = número limite para verificações de primos
 
 ## Performance Results (N = 1 000)
 
-| Threads (p) | Tempo Tₚ (s)  | Speedup Sₚ = Sequencial/Tₚ | Efficiency Eₚ = Sₚ/p |
+| Threads (p) | Tempo Tₚ (s)  | Aceleração Sₚ = Sequencial/Tₚ | Eficiência Eₚ = Sₚ/p |
 |------------:|--------------:|-------------------:|--------------------:|
 | Sequencial  | 0.000021      | 1.00               | 1.00                |
 | 1           | 0.000026      |                    |                     |
@@ -63,7 +63,7 @@ N = número limite para verificações de primos
 
 ## Performance Results (N = 1 000 000)
 
-| Threads (p) | Tempo Tₚ (s) | Speedup Sₚ = Sequencial/Tₚ  | Efficiency Eₚ = Sₚ/p |
+| Threads (p) | Tempo Tₚ (s) | Aceleração Sₚ = Sequencial/Tₚ  | Eficiência Eₚ = Sₚ/p |
 |------------:|-------------:|-------------------:|--------------------:|
 | Sequencial  | 0.094638      | 1.00               | 1.00                |
 | 1           | 0.098045      |                    |                     |
@@ -84,4 +84,6 @@ N = número limite para verificações de primos
 
 ## Conclusão
 
-Através da análise das tabelas acima, é possível perceber que para esse problema, quanto maior o número de threadhs, maior o tempo de execução. Isso se dá por causa do mutex que usamos, que acaba impedindo o trabalho simultâneo das threads em alguns momentos, fazendo com que o custo de tempo para criar elas seja pior do que o tempo que elas economizam realizando as tarefas de maneira simultânea.
+Através da análise das tabelas acima, é possível perceber que para esse problema, quanto maior o número de threads, maior o tempo de execução. Isso se dá por causa do mutex que usamos, que acaba impedindo o trabalho simultâneo das threads em alguns momentos, fazendo com que o custo de tempo para criar elas seja maior do que o tempo que elas economizam realizando as tarefas de maneira simultânea.
+
+Outro detalhe interessante de se observar, é a diferença de tempo entre o algoritmo sequencial e o algoritmo concorrente com apenas uma thread. Visto que o segundo tem um tempo de execução um pouco maior também por causa desse custo para criação da thread.
